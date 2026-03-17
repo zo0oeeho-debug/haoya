@@ -6,9 +6,10 @@ import { ModeProvider } from '@/context/mode-context'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// 修改为中文SEO标题和描述（适配百度搜索）
 export const metadata: Metadata = {
-  title: 'PDF Compressor',
-  description: 'Professional PDF compression tool',
+  title: '好压 - 免费PDF图片压缩工具_浏览器端无损压缩_无需上传服务器',
+  description: '好压是一款永久免费的PDF/图片压缩工具，支持浏览器端无损压缩，文件不上传服务器，无需注册、批量处理，轻松减小文件体积！',
 }
 
 export default function RootLayout({
@@ -17,13 +18,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="h-full">
+    // 把语言改成zh-CN（适配百度收录），保留原有className
+    <html lang="zh-CN" className="h-full">
+      {/* 新增head标签，放入百度验证标签 */}
+      <head>
+        <meta name="baidu-site-verification" content="codeva-jS7KaEKGTk" />
+      </head>
       <body className={`${inter.className} min-h-screen bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-50 selection:bg-brand-blue/10 selection:text-brand-blue`}>
         <div id="haoya-bg-layer" className="fixed inset-0 -z-10 h-full w-full bg-slate-50 dark:bg-slate-950 overflow-hidden">
            {/* 深海蓝灰 - 模拟深层海水流动 */}
            <div className="absolute -left-[20%] top-[10%] h-[1000px] w-[1000px] rounded-full bg-blue-200/30 blur-[120px] mix-blend-multiply dark:bg-blue-900/20 dark:mix-blend-screen animate-drift"></div>
            
-           {/* 清透青蓝 - 模拟浅层海水 */}
+           {/* 清透青蓝 - 模拟浅层海水流动 */}
            <div className="absolute -right-[10%] -top-[20%] h-[900px] w-[900px] rounded-full bg-cyan-100/40 blur-[100px] mix-blend-multiply dark:bg-cyan-900/20 dark:mix-blend-screen animate-blob animation-delay-2000"></div>
            
            {/* 灰蓝暗流 - 增加层次感 */}
