@@ -8,8 +8,18 @@ const inter = Inter({ subsets: ['latin'] })
 
 // 修改为中文SEO标题和描述（适配百度搜索）
 export const metadata: Metadata = {
-  title: '好压 - 免费PDF图片压缩工具_浏览器端无损压缩_无需上传服务器',
-  description: '好压是一款永久免费的PDF/图片压缩工具，支持浏览器端无损压缩，文件不上传服务器，无需注册、批量处理，轻松减小文件体积！',
+  title: '好压 - 免费PDF压缩、图片压缩工具 | 无需注册，在线一键压缩',
+  description: '好压是免费在线PDF压缩、图片压缩工具，支持PDF、JPG、PNG格式，无需注册和下载，一键压缩文件大小，保留清晰画质，适合办公和日常使用。',
+  keywords: 'PDF压缩,图片压缩,在线压缩,免费压缩工具,无需注册',
+  alternates: {
+    canonical: 'https://haoya.asia'
+  },
+  openGraph: {
+    title: '好压 - 免费PDF压缩、图片压缩工具',
+    description: '免费在线PDF压缩、图片压缩工具，无需注册，一键压缩',
+    url: 'https://haoya.asia',
+    type: 'website'
+  }
 }
 
 export default function RootLayout({
@@ -22,7 +32,7 @@ export default function RootLayout({
     <html lang="zh-CN" className="h-full">
       {/* 新增head标签，放入百度验证标签 */}
       <head>
-        <meta name="baidu-site-verification" content="codeva-jS7KaEKGTk" />
+        <meta name="baidu-site-verification" content="codeva-PaymMOyonG" />
       </head>
       <body className={`${inter.className} min-h-screen bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-50 selection:bg-brand-blue/10 selection:text-brand-blue`}>
         <div id="haoya-bg-layer" className="fixed inset-0 -z-10 h-full w-full bg-slate-50 dark:bg-slate-950 overflow-hidden">

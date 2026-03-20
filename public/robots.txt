@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://haoya.asia/sitemap.xml
